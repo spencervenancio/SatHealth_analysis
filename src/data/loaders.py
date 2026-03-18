@@ -26,9 +26,8 @@ def load_icd(level: int):
     elif level == 3:
         return pd.read_csv(SATHEALTH_DATA_DIR / 'icdl3_prev_ohio.csv')
 
-# Load CBSA to FIPS mapping
-def load_cbsa_county_mapping():
-    cbsa_fips = pd.read_csv(RAW_DATA_DIR / 'cbsa_to_fips.csv')
-    return cbsa_fips[['cbsacode', 'fipscountycode']].rename(columns={'fipscountycode': 'COUNTYFP'})
+# Load crosswalk data
+def load_fips_crosswalk():
+    return pd.read_csv(RAW_DATA_DIR / 'cbsa_to_fips.csv')
 
 

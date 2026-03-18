@@ -1,4 +1,5 @@
 import pandas as pd
+from src.data.loaders import load_fips_crosswalk
 
 def set_index(df: pd.DataFrame, index_col: str = 'COUNTYFP') -> pd.DataFrame:
     """Set index of dataframe to specified geographic unit
@@ -15,3 +16,15 @@ def merge_datasets(dfs: list[pd.DataFrame]) -> pd.DataFrame:
     for df in dfs[1:]:
         merged_df = merged_df.merge(df, left_index=True, right_index=True, how='outer')
     return merged_df
+
+def cbsa_to_counties(crosswalk_df: pd.DataFrame) -> dict[str, list[str]]:
+    """Create dictionary mapping CBSA codes to lists of COUNTYFP codes"""
+    cw = crosswalk_df[['cbsacode', 'fipscountycode']].rename(columns={'fipscountycode': 'COUNTYFP', 'cbsacode': 'CBSAFP'})
+    return (
+        cw.groupby('CBSAFP')['COUNTYFP']
+          .apply(list)
+          .to_dict()
+    )
+    
+if __name__ == "__main__":
+    pass
