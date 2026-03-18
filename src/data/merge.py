@@ -8,3 +8,10 @@ def set_index(df: pd.DataFrame, index_col: str = 'COUNTYFP') -> pd.DataFrame:
         df.set_index([index_col, 'year', 'month'], inplace=True) 
     else:
         df.set_index(index_col, inplace=True)
+
+def merge_datasets(dfs: list[pd.DataFrame]) -> pd.DataFrame:
+    """Merge list of dataframes on their indices using outer join"""
+    merged_df = dfs[0]
+    for df in dfs[1:]:
+        merged_df = merged_df.merge(df, left_index=True, right_index=True, how='outer')
+    return merged_df
