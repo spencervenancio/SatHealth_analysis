@@ -19,13 +19,16 @@ def merge_datasets(dfs: list[pd.DataFrame]) -> pd.DataFrame:
                                     how='outer')
     return merged_df
 
-def cbsa_to_counties(
-    crosswalk_df: pd.DataFrame
-    ) -> dict[str, list[str]]:
-    """Create dictionary mapping CBSA codes to lists of COUNTYFP codes"""
-    cw = crosswalk_df[['cbsacode', 'fipscountycode']]
-    cw = cw.rename(columns={'fipscountycode': 'COUNTYFP', 
-                            'cbsacode': 'CBSAFP'})
+def cbsa_to_counties(crosswalk_df: pd.DataFrame) -> dict[str, list[str]]:
+    cw = (
+        crosswalk_df[['cbsacode', 'fipscountycode']]
+        .drop_duplicates()
+        .rename(columns={
+            'fipscountycode': 'COUNTYFP',
+            'cbsacode': 'CBSAFP'
+        })
+    )
+    
     return (
         cw.groupby('CBSAFP')['COUNTYFP']
           .apply(list)
