@@ -48,4 +48,4 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
 
 ## Reproducing the Analyis
 
-For information about how to reproduce this analysis, please see `docs` where we provide a mkdocs website that you can serve locally with the documentation for the project.
+For information about how to reproduce this analysis, please see `docs/` where we provide a mkdocs website that you can serve locally with the documentation for the project.
