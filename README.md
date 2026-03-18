@@ -1,15 +1,10 @@
 # SatHealth_anlysis
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
-
 Final project for Stat 479 - Feature Selection in Statistical Machine Learning at the of Wisconsin-Madison
 
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
@@ -22,9 +17,7 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
+├── notebooks          <- Jupyter notebooks.
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
 │                         src and configuration for tools like black
@@ -34,8 +27,7 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+├── environment.yml    <- The requirements file for reproducing the analysis environment
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
@@ -57,5 +49,16 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
     └── plots.py                <- Code to create visualizations
 ```
 
---------
+## Set Up
 
+Download the [SatHealth DataSet](https://aimed-sathealth.net/). It should be named `sathealth_dataset/` and placed in `data/raw/`.
+
+Download the `.csv` version of the CBSA to FIP Crosswalk from the [National Bureau of Economic Research](https://www.nber.org/research/data/census-core-based-statistical-area-cbsa-federal-information-processing-series-fips-county-crosswalk). Rename the file `cbsa_to_fips.csv`, and place it in `data/external/`
+
+Install dependencies by running in your terminal:
+
+```bash
+$ make requirements
+$ conda activate sathealth_anlysis
+```
+--------
