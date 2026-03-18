@@ -12,7 +12,7 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
 │   ├── processed      <- The final, canonical data sets for modeling.
 │   └── raw            <- The original, immutable data dump.
 │
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
+├── docs               <- The documentation as a mkdocs project.
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
 │
@@ -46,16 +46,6 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
     └── plots.py                <- Code to create visualizations
 ```
 
-## Set Up
+## Reproducing the Analyis
 
-Download the [SatHealth DataSet](https://aimed-sathealth.net/). It should be named `sathealth_dataset/` and placed in `data/raw/`.
-
-Download the `.csv` version of the CBSA to FIP Crosswalk from the [National Bureau of Economic Research](https://www.nber.org/research/data/census-core-based-statistical-area-cbsa-federal-information-processing-series-fips-county-crosswalk). Rename the file `cbsa_to_fips.csv`, and place it in `data/external/`
-
-Install dependencies by running in your terminal:
-
-```bash
-$ make requirements
-$ conda activate sathealth_anlysis
-```
---------
+For information about how to reproduce this analysis, please see `docs` where we provide a mkdocs website that you can serve locally with the documentation for the project.
