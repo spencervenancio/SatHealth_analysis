@@ -1,14 +1,14 @@
 import pandas as pd
 from src.data.loaders import load_fips_crosswalk, load_icd
 
+        
 def set_index(df: pd.DataFrame, index_col: str = 'COUNTYFP') -> pd.DataFrame:
     """Set index of dataframe to specified geographic unit
     (default: 'COUNTYFP'), and 'year', 'month' for time-varying
     dataframes"""
     if 'year' in df.columns and 'month' in df.columns:
-        df.set_index([index_col, 'year', 'month'], inplace=True) 
-    else:
-        df.set_index(index_col, inplace=True)
+        return df.set_index([index_col, 'year', 'month'])
+    return df.set_index(index_col)
 
 def merge_datasets(dfs: list[pd.DataFrame]) -> pd.DataFrame:
     """Merge list of dataframes on their indices using outer join"""
