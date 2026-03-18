@@ -1,5 +1,5 @@
 import pandas as pd
-from src.data.loaders import load_fips_crosswalk
+from src.data.loaders import load_fips_crosswalk, load_icd
 
 def set_index(df: pd.DataFrame, index_col: str = 'COUNTYFP') -> pd.DataFrame:
     """Set index of dataframe to specified geographic unit
@@ -25,6 +25,19 @@ def cbsa_to_counties(crosswalk_df: pd.DataFrame) -> dict[str, list[str]]:
           .apply(list)
           .to_dict()
     )
+
+def expand_cbsa_to_county(df: pd.DataFrame, cbsa_to_counties: dict) -> pd.DataFrame:
+    df = df.copy()   
+    df['COUNTYFP'] = df.index.map(cbsa_to_counties)
+    df = df.explode('COUNTYFP')
+    return df
     
 if __name__ == "__main__":
-    pass
+    # Example usage
+    crosswalk_df = load_fips_crosswalk()
+    cbsa_county_mapping = cbsa_to_counties(crosswalk_df)   
+    icd1 = load_icd(1)
+    icd1 = icd1.set_index('CBSAFP')
+    icd1_expanded = expand_cbsa_to_county(icd1, cbsa_county_mapping))
+    print(icd1_expanded.info())
+    
