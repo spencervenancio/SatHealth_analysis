@@ -1,6 +1,4 @@
 import pandas as pd
-from src.data.loaders import load_fips_crosswalk, load_icd
-
         
 def set_index(df: pd.DataFrame, index_col: str = 'COUNTYFP') -> None:
     """Set index of dataframe to specified geographic unit
@@ -57,10 +55,5 @@ def monthly_to_annual(df: pd.DataFrame, merge_col: str = 'COUNTYFP') -> pd.DataF
 
     
 if __name__ == "__main__":
-    # Example usage
-    crosswalk_df = load_fips_crosswalk()
-    cbsa_county_mapping = cbsa_to_counties(crosswalk_df)   
-    icd1 = load_icd(1)
-    icd1_expanded = expand_cbsa_to_county(icd1, cbsa_county_mapping)
-    print(icd1_expanded.head())
+    pass
     
