@@ -1,14 +1,13 @@
 # SatHealth_anlysis
 
-Final project for Stat 479 - Feature Selection in Statistical Machine Learning at the of Wisconsin-Madison
+Final project for Stat 479 - Feature Selection in Statistical Machine Learning at the University of Wisconsin-Madison
 
 ## Project Organization
 
 ```
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
+├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── data
-│   ├── external       <- Data from third party sources.
 │   ├── interim        <- Intermediate data that has been transformed.
 │   ├── processed      <- The final, canonical data sets for modeling.
 │   └── raw            <- The original, immutable data dump.
@@ -28,9 +27,7 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
 ├── environment.yml    <- The requirements file for reproducing the analysis environment
-│
-├── setup.cfg          <- Configuration file for flake8
-│
+││
 └── src   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes src a Python module
