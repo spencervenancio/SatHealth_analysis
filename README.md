@@ -46,6 +46,6 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
     └── plots.py                <- Code to create visualizations
 ```
 
-## Reproducing the Analyis
+## Reproducing the Analysis
 
 For information about how to reproduce this analysis, please see `docs/` where we provide a mkdocs website that you can serve locally with the documentation for the project.
