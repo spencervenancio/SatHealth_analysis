@@ -2,7 +2,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = sathealth_anlysis
+PROJECT_NAME = SatHealth
 PYTHON_VERSION = 3.10
 PYTHON_INTERPRETER = python
 

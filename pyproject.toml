@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "src"
 version = "0.0.1"
-description = "Final project for Stat 479 - Feature Selection in Statistical Machine Learning at y of Wisconsin-Madison"
+description = "Final project for Stat 479 - Feature Selection in Statistical Machine Learning at the University of Wisconsin-Madison"
 authors = [
   { name = "Spencer Venancio" },
 ]

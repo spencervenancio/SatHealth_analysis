@@ -1,4 +1,4 @@
-# SatHealth_anlysis
+# SatHealth Analysis
 
 Final project for Stat 479 - Feature Selection in Statistical Machine Learning at the University of Wisconsin-Madison
 

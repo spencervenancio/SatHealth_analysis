@@ -1,4 +1,4 @@
-name: sathealth_anlysis
+name: SatHealth
 channels:
   - conda-forge
 dependencies:
