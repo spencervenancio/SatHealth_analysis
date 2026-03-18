@@ -1,12 +1,15 @@
 Generating the docs
 ----------
 
-Use [mkdocs](http://www.mkdocs.org/) structure to update the documentation. 
+We use [mkdocs](http://www.mkdocs.org/) structure for the documentation. 
 
 Build locally with:
 
-    mkdocs build
+```bash 
+mkdocs build
+```
 
 Serve locally with:
-
-    mkdocs serve
+```bash
+  mkdocs serve
+```

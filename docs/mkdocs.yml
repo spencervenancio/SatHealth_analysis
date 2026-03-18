@@ -1,4 +1,5 @@
-site_name: SatHealth_anlysis
+site_name: SatHealth Analysis Documentation
 # 
 site_author: Spencer Venancio
 # 
+theme: readthedocs

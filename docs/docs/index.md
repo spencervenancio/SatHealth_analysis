@@ -1,8 +1,8 @@
-# SatHealth_anlysis documentation!
+# SatHealth Analysis Documentation!
 
 ## Description
 
-Final project for Stat 479 - Feature Selection in Statistical Machine Learning at y of Wisconsin-Madison
+Final project for Stat 479 - Feature Selection in Statistical Machine Learning at University of Wisconsin-Madison
 
 ## Commands
 
