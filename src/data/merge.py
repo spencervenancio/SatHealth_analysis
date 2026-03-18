@@ -28,16 +28,15 @@ def cbsa_to_counties(crosswalk_df: pd.DataFrame) -> dict[str, list[str]]:
 
 def expand_cbsa_to_county(df: pd.DataFrame, cbsa_to_counties: dict) -> pd.DataFrame:
     df = df.copy()   
-    df['COUNTYFP'] = df.index.map(cbsa_to_counties)
-    df = df.explode('COUNTYFP')
-    return df
+    df['COUNTYFP'] = df['CBSAFP'].map(cbsa_to_counties)
+    df = df.explode('COUNTYFP').reset_index(drop=True)
+    return df.set_index('COUNTYFP')
     
 if __name__ == "__main__":
     # Example usage
     crosswalk_df = load_fips_crosswalk()
     cbsa_county_mapping = cbsa_to_counties(crosswalk_df)   
     icd1 = load_icd(1)
-    icd1 = icd1.set_index('CBSAFP')
-    icd1_expanded = expand_cbsa_to_county(icd1, cbsa_county_mapping))
-    print(icd1_expanded.info())
+    icd1_expanded = expand_cbsa_to_county(icd1, cbsa_county_mapping)
+    print(icd1_expanded.head())
     
