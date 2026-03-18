@@ -27,7 +27,7 @@ Final project for Stat 479 - Feature Selection in Statistical Machine Learning a
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
 ├── environment.yml    <- The requirements file for reproducing the analysis environment
-││
+│
 └── src   <- Source code for use in this project.
     │
     ├── __init__.py             <- Makes src a Python module
