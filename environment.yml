@@ -15,6 +15,7 @@ dependencies:
   - pandas
   - scikit-learn
   - ruff
+  - statsmodels
   - pip:
     - python-dotenv
     - mkdocs
