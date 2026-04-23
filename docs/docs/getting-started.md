@@ -20,6 +20,6 @@ $ conda activate SatHealth
 ## Building the Dataset
 
 ```bash
-$ make data
+(SatHealth)$ make data
 ```
 --------
