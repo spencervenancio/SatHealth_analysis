@@ -6,7 +6,7 @@ from statsmodels.stats.multitest import multipletests
 
 
 
-def corr_screening(df:pd.DataFrame, target_col: str, selection_criterion: str = "p_value",
+def corr_screening(df:pd.DataFrame, target_col: str = "depr_prev", selection_criterion: str = "p_value",
                    corr_threshold: float = 0.2, return_df: bool = False, alpha: float = 0.05, 
                    top_K_features: int = 10):
     """Performs correlation screening for feature selection.
