@@ -17,6 +17,7 @@ dependencies:
   - ruff
   - statsmodels
   - seaborn
+  - IProgress
   - pip:
     - python-dotenv
     - mkdocs
