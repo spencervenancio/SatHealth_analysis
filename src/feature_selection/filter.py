@@ -24,8 +24,11 @@ def corr_screening(df:pd.DataFrame, target_col: str = "depr_prev", selection_cri
     Returns:
         selected_features: The selected features
     """
-    feature_names = df.drop(columns=[target_col]).columns
-    X = df.drop(columns=[target_col]).to_numpy(dtype=float)
+    feature_df = df.drop(columns=[target_col])
+    constant_mask = feature_df.nunique() <= 1
+    feature_df = feature_df.loc[:, ~constant_mask]
+    feature_names = feature_df.columns
+    X = feature_df.to_numpy(dtype=float)
     y = df[target_col].to_numpy(dtype=float)
     p = X.shape[1]
 
